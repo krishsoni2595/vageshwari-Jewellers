@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vageshwari Jewellers – Bopal, Ahmedabad</title>
+<style>
+:root{--bg:#fffaf0;--card:#fff;--ink:#3a2a10;--mute:#7a6a50;--gold:#b8860b;--gold2:#e0b84a;--line:#ecdcae;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1409;--card:#271c0d;--ink:#f6e9c8;--mute:#c9b88f;--gold:#e0b84a;--gold2:#b8860b;--line:#4a3716}}
+:root[data-theme="dark"]{--bg:#1b1409;--card:#271c0d;--ink:#f6e9c8;--mute:#c9b88f;--gold:#e0b84a;--gold2:#b8860b;--line:#4a3716}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,'Noto Serif Devanagari',serif;line-height:1.6}
+#splash{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .8s}
+#splash.hide{opacity:0;pointer-events:none}
+.logo{width:110px;height:110px;border-radius:50%;border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:48px;color:var(--gold);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{transform:scale(1.07)}}
+#splash h1{color:var(--gold);margin:18px 0 4px;font-size:26px}
+header{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;text-align:center;padding:48px 18px}
+header h1{margin:0;font-size:30px}
+header p{margin:8px auto 18px;max-width:520px}
+.btn{display:inline-block;margin:4px;padding:11px 20px;border-radius:30px;background:#fff;color:#7a5200;text-decoration:none;font-weight:bold}
+main{max-width:760px;margin:auto;padding:18px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:16px 0}
+h2{color:var(--gold);margin:0 0 10px;font-size:21px}
+.rates{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.rate{border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
+.rate b{display:block;font-size:22px;color:var(--gold)}
+.mute{color:var(--mute);font-size:13px}
+ul{padding-left:20px;margin:6px 0}
+#admin{display:none}
+#admin input{width:100%;padding:9px;margin:4px 0;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+#admin button{padding:10px 18px;border:0;border-radius:8px;background:var(--gold);color:#fff;font-weight:bold}
+footer{text-align:center;padding:20px;color:var(--mute);font-size:13px}
+</style>
+</head>
+<body>
+<div id="splash"><div class="logo">V</div><h1>Vageshwari Jewellers</h1><div class="mute">Shuddhata aur Vishwas</div></div>
+
+<header>
+<h1>Vageshwari Jewellers</h1>
+<p>Shuddhata aur vishwas ke saath sundar aur aakarshak jewellery designs</p>
+<a class="btn" href="tel:9429029691">📞 Call 9429029691</a>
+<a class="btn" href="https://wa.me/919429029691">WhatsApp</a>
+</header>
+
+<main>
+<section>
+<h2>आज का भाव</h2>
+<div class="rates">
+<div class="rate">सोना 24K<b id="g24">—</b><span class="mute">प्रति 10 ग्राम</span></div>
+<div class="rate">सोना 22K<b id="g22">—</b><span class="mute">प्रति 10 ग्राम</span></div>
+<div class="rate">चाँदी<b id="sv">—</b><span class="mute">प्रति किलो</span></div>
+</div>
+<p class="mute" id="rdate">आज का सही भाव जानने के लिए showroom पर संपर्क करें।</p>
+<div style="text-align:center;margin:14px 0"><div class="logo" style="margin:auto;animation:none">V</div><div style="color:var(--gold);font-weight:bold;margin-top:8px">Vageshwari Jewellers</div></div>
+<a class="btn" style="background:var(--gold);color:#fff" href="https://allindiabullion.com/r/jigneshsoni1945?s=wa" target="_blank" rel="noopener">🔴 Live भाव देखें</a>
+</section>
+
+<section id="admin">
+<h2>भाव अपडेट (सिर्फ मालिक)</h2>
+<input id="i24" inputmode="numeric" placeholder="सोना 24K (₹ / 10 ग्राम)">
+<input id="i22" inputmode="numeric" placeholder="सोना 22K (₹ / 10 ग्राम)">
+<input id="isv" inputmode="numeric" placeholder="चाँदी (₹ / किलो)">
+<button id="save">Save</button> <span class="mute" id="msg"></span>
+</section>
+
+<section>
+<h2>हमारा कलेक्शन</h2>
+<p>यहाँ सब कुछ मिल जाएगा, और अपनी पसंद से customize भी करवा सकते हैं। किसी भी श्रेणी पर टैप करें।</p>
+<div id="coll"></div>
+</section>
+
+<section>
+<h2>हमारे बारे में</h2>
+<p>20+ साल का भरोसा। रोज़ के ताज़ा market भाव पर शुद्ध, विश्वसनीय jewellery और custom designs। Traditional aur modern dono designs.</p>
+<ul>
+<li>Gold &amp; silver necklaces, designer haar sets</li>
+<li>Diamond &amp; gold rings, earrings / butti</li>
+<li>Gold chains aur sabhi silver &amp; gold jewellery</li>
+<li>Customized jewellery making</li>
+</ul>
+</section>
+
+<section>
+<h2>संपर्क</h2>
+<p>📍 Shop 6, J B Park Shopping Centre, Bopal, Ahmedabad, Gujarat – 380058<br>
+🕥 10:30 AM – 8:30 PM, Monday se Sunday<br>
+📞 मुख्य नंबर / WhatsApp: <a href="tel:9429029691" style="color:var(--gold)">9429029691</a><br>📞 दूसरा नंबर: <a href="tel:9213579690" style="color:var(--gold)">9213579690</a></p>
+<a class="btn" style="background:var(--gold);color:#fff" href="https://maps.app.goo.gl/wBKfssgHgxL9QZFo8">Google Maps पर देखें</a>
+</section>
+</main>
+<footer>© Vageshwari Jewellers, Bopal, Ahmedabad</footer>
+
+<script>
+setTimeout(function(){document.getElementById('splash').classList.add('hide')},1800);
+window.PH={};var $=function(i){return document.getElementById(i)};
+function fmt(n){try{return '₹ '+Number(n).toLocaleString('en-IN')}catch(e){return '₹ '+n}}
+function show(d){
+  if(!d||!d.g24)return;
+  $('g24').textContent=fmt(d.g24);$('g22').textContent=fmt(d.g22);$('sv').textContent=fmt(d.sv);
+  $('rdate').textContent='भाव की तारीख: '+d.date+' · अंतिम भाव showroom पर confirm करें।';
+}
+(async function(){
+  try{
+    var db=await claude.use('db');
+    if(db){
+      var ref=db.doc('rates/today');window.DB=db;try{await Promise.all(Array.apply(null,Array(21)).map(function(_,q){return db.doc('photos/k'+q).get().then(function(ps){window.PH[q]=ps.exists?(ps.data().ids||[]):[]}).catch(function(){})}))}catch(e){}
+      var s=await ref.get();
+      if(s.exists)show(s.data());
+      var user=await claude.use('user');
+      if(user&&await user.isOwner()){
+        $('admin').style.display='block';window.OWN=true;try{window.AS=await claude.use('assets')}catch(e){}
+        $('save').onclick=async function(){
+          var d={g24:+$('i24').value,g22:+$('i22').value,sv:+$('isv').value,date:new Date().toLocaleDateString('en-IN')};
+          if(!d.g24||!d.g22||!d.sv){$('msg').textContent='तीनों भाव भरें';return}
+          try{await ref.set(d);show(d);$('msg').textContent='Save हो गया ✓'}catch(e){$('msg').textContent='Save नहीं हुआ'}
+        };
+      }
+    }
+  }catch(e){}
+})();
+</script>
+<div id="gal" style="display:none;position:fixed;inset:0;z-index:60;background:var(--bg);overflow:auto;padding:calc(env(safe-area-inset-top,0px) + 16px) 16px 24px"><button id="galx" style="position:sticky;top:0;float:right;padding:8px 16px;border:0;border-radius:8px;background:var(--gold);color:#fff;font-weight:bold">✕ बंद</button><div id="galc"></div></div>
+<script>
+(function(){
+var c=document.getElementById('coll'),g=document.getElementById('gal'),gc=document.getElementById('galc');
+var L=[['Gold Jewellery',['Gold Necklaces','Gold Earrings','Gold Rings','Gold Bangles & Bracelets','Gold Chains','Gold Pendants','Gold Mangalsutra','Gold Coins']],['Silver Jewellery',['Silver Necklaces','Silver Earrings','Silver Rings','Silver Bracelets & Kadas','Silver Anklets','Silver Chains','Oxidised Silver Jewellery','Silver Idols & Coins']],['Special Collections',['New Arrivals','Best Sellers','Bridal Collection',"Men's Jewellery",'Gifting']]];
+var n=0,names=[];
+function el(t,s,x){var e=document.createElement(t);if(s)e.style.cssText=s;if(x)e.textContent=x;return e}
+L.forEach(function(gp){c.appendChild(el('h3','color:var(--gold);margin:16px 0 8px',gp[0]));var w=el('div','display:grid;grid-template-columns:1fr 1fr;gap:8px');gp[1].forEach(function(nm){var i=n++;names[i]=nm;var b=el('button','padding:12px 8px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit;font-size:14px;cursor:pointer',nm);b.onclick=function(){op(i)};w.appendChild(b)});c.appendChild(w)});
+function op(i){
+gc.innerHTML='';
+gc.appendChild(el('h3','color:var(--gold)',names[i]));
+var ids=(window.PH||{})[i]||[];
+var w=el('div','display:grid;grid-template-columns:1fr 1fr;gap:12px');
+ids.forEach(function(id,k){var d=el('div','');var im=document.createElement('img');im.src='/_blob/'+id;im.style.cssText='width:100%;border-radius:8px';d.appendChild(im);if(window.OWN){var x=el('button','margin-top:4px','✕ हटाएँ');x.onclick=async function(){var a=ids.slice();a.splice(k,1);window.PH[i]=a;try{await window.DB.doc('photos/k'+i).set({ids:a})}catch(e){}op(i)};d.appendChild(x)}w.appendChild(d)});
+gc.appendChild(w);
+if(!ids.length)gc.appendChild(el('p','color:var(--mute)','जल्द ही फोटो आएँगी। पूरा collection देखने के लिए showroom आएँ या call करें।'));
+if(window.OWN){var a=el('button','padding:10px 16px;border:0;border-radius:8px;background:var(--gold);color:#fff;font-weight:bold;margin:12px 0','📷 फोटो जोड़ें');var f=document.createElement('input');f.type='file';f.accept='image/*';f.multiple=true;f.hidden=true;a.onclick=function(){f.click()};f.onchange=async function(){a.disabled=true;a.textContent='अपलोड हो रहा है…';try{var a2=ids.slice();for(var k=0;k<f.files.length;k++){var r=await window.AS.upload(f.files[k]);a2.push(r.id)}window.PH[i]=a2;await window.DB.doc('photos/k'+i).set({ids:a2})}catch(e){alert('फोटो अपलोड नहीं हुई')}op(i)};gc.appendChild(a);gc.appendChild(f)}
+g.style.display='block'}
+document.getElementById('galx').onclick=function(){g.style.display='none'};
+})();
+</script>
+</body>
+</html>
